@@ -31,7 +31,7 @@ jobs:
           cp logo.png www/
           npx cap init "Nepali Village Game" com.nepalivillage.game --web-dir www
           npx cap add android
-          sed -i 's/<activity/<activity android:screenOrientation="portrait"/' android/app/src/main/AndroidManifest.xml
+          sed -i 's/<activity/<activity android:screenOrientation="sensorLandscape"/' android/app/src/main/AndroidManifest.xml
 
       - name: Make app full screen
         run: |
