@@ -9,9 +9,17 @@ html,body{margin:0;height:100%;overflow:hidden;background:#87ceeb;touch-action:n
 #btns{position:fixed;bottom:20px;left:0;right:0;display:flex;justify-content:space-between;padding:0 20px}
 .grp{display:flex;gap:10px}
 .b{width:80px;height:80px;border-radius:50%;background:rgba(0,0,0,.4);color:#fff;font-size:32px;border:none;user-select:none;-webkit-user-select:none}
+#splash{position:fixed;top:0;left:0;right:0;bottom:0;background:#000;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center}
+#splash img{width:92%;max-width:500px;height:auto}
+#start{margin-top:40px;padding:16px 50px;font-size:26px;font-weight:bold;color:#fff;background:#0a84ff;border:none;border-radius:12px}
 </style>
 </head>
 <body>
+<div id="splash">
+  <img src="logo.png" alt="Nepali Car Game">
+  <button id="start">START</button>
+</div>
+
 <div id="btns">
   <div class="grp"><button class="b" id="left">◀</button><button class="b" id="right">▶</button></div>
   <div class="grp"><button class="b" id="brake">▼</button><button class="b" id="gas">▲</button></div>
@@ -19,6 +27,11 @@ html,body{margin:0;height:100%;overflow:hidden;background:#87ceeb;touch-action:n
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
+// ---- Start screen ----
+document.getElementById('start').addEventListener('click', function () {
+  document.getElementById('splash').style.display = 'none';
+});
+
 // ---- Scene setup ----
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x87ceeb);
